@@ -1,0 +1,59 @@
+html, body, h1, h2, h3, h4, h5, h6, ol, li, form, hr 
+    margin: 0
+    padding: 0
+
+* 
+    box-sizing: border-box
+    
+html, body
+    background: $light
+
+html
+    height: 100%
+
+body
+    min-height: 100%
+    -webkit-flex: flex-box
+    display: flex
+    flex-direction: column
+
+main
+    flex: 1 0 auto
+    background: #f3f3f3
+
+header 
+    padding: 10px 0
+    color: #FFF
+    background: $header
+
+footer
+    color: $header
+    font-size: 0.8em
+    .container
+        padding: 10px 0
+        border-top: 1px solid $border
+
+a, a:link
+    color: $link
+    &:hover,
+    &:focus
+        color: darken($link, 10%)
+
+
+.aligned
+    &.center
+        text-align: center
+    &.left
+        text-align: left
+    &.right
+        text-align: right
+
+.floated
+    &.center
+        margin-left: auto
+        margin-right: auto
+    &.left
+        float: left
+    &.right
+        float: right
+

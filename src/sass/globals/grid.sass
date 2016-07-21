@@ -1,0 +1,52 @@
+
+.container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 0.75rem
+
+.column
+    &.c1, &.c2, &.c3, &.c4
+        +span-columns(6)
+    &.c5, &.c6, &.c7, &.c8,
+    &.c9, &.c10, &.c11, &.c12
+        +span-columns(12)
+
+@media screen and (min-width:768px)
+    .column
+        &.c1, &.c2, &.c3, &.c4
+            +span-columns(3)
+        &.c5, &.c6, &.c7, &.c8,
+            +span-columns(4)
+        &.c9, &.c10, &.c11, &.c12
+            +span-columns(6)
+
+@media screen and (min-width:768px)
+    .column
+        margin-top: 0.75rem
+        margin-bottom: 0.75rem
+
+        &.c1
+            +span-columns(1)
+        &.c2
+            +span-columns(2)
+        &.c3
+            +span-columns(3)
+        &.c4
+            +span-columns(4)
+        &.c5
+            +span-columns(5)
+        &.c6
+            +span-columns(6)
+        &.c7
+            +span-columns(7)
+        &.c8
+            +span-columns(8)
+        &.c9
+            +span-columns(9)
+        &.c10
+            +span-columns(10)
+        &.c11
+            +span-columns(11)
+        &.c12
+            +span-columns(12)
