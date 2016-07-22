@@ -1,59 +1,34 @@
-html, body, h1, h2, h3, h4, h5, h6, ol, li, form, hr 
-    margin: 0
-    padding: 0
-
-* 
-    box-sizing: border-box
-    
-html, body
-    background: $light
-
-html
-    height: 100%
-
-body
-    min-height: 100%
-    -webkit-flex: flex-box
-    display: flex
-    flex-direction: column
-
-main
-    flex: 1 0 auto
-    background: #f3f3f3
-
-header 
-    padding: 10px 0
-    color: #FFF
-    background: $header
-
-footer
-    color: $header
-    font-size: 0.8em
-    .container
-        padding: 10px 0
-        border-top: 1px solid $border
-
-a, a:link
-    color: $link
-    &:hover,
-    &:focus
-        color: darken($link, 10%)
-
-
-.aligned
-    &.center
-        text-align: center
-    &.left
-        text-align: left
-    &.right
-        text-align: right
 
 .floated
-    &.center
-        margin-left: auto
-        margin-right: auto
-    &.left
-        float: left
     &.right
         float: right
+    &.left
+        float: left
 
+.aligned
+    &.right
+        text-align: right
+    &.left
+        text-align: left
+    &.center
+        text-align: center
+
+.text-sm
+    font-size: 0.8em
+
+.material-icons 
+    vertical-align: middle
+    &.left
+        margin-right: 5px
+    &.right
+        margin-left: 5px
+    &.mini
+        font-size: 0.9em
+    &.small
+        font-size: 1em
+    &.medium
+        font-size: 1.2em
+    &.large
+        font-size: 1.4em
+
+        

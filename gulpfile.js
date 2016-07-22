@@ -23,8 +23,9 @@ elixir(function(mix){
         './node_modules/react/dist/react.js',
         './node_modules/react/dist/react-with-addons.js',
         './node_modules/react-dom/dist/react-dom.js',
-        './node_modules/jquery/dist/jquery.js',
         './node_modules/marked/lib/marked.js',
+        './node_modules/jquery/dist/jquery.js',
+        './node_modules/material-design-lite/material.js'
     ], './public/js/lib.js')
     .browserify('./src/js/app.js', './public/js/app.js')
     .renderview()

@@ -1,14 +1,55 @@
 
-.list 
-    .item
-        padding: 10px 
-    .item:not(:last-child)
-        border-bottom: 1px solid $border
-    .item:hover, &:focus
-        background: #fff
-    .item 
-        .header
-            margin: 0 0 5px
-            color: $main 
-        p 
-            margin: 0 0 5px
+.mdl-card .mdl-list
+    .mdl-list__item:first-child
+        padding-top: 0
+    .mdl-list__item:last-child
+        padding-bottom: 0
+    .mdl-list__item--three-line,
+    .mdl-list__item--three-line .mdl-list__item-primary-content
+        height: auto
+    .mdl-list__item--three-line .mdl-list__item-text-body
+        height: auto
+        margin-left: 56px
+    .mdl-list__item small
+        margin-left: 10px
+
+.tree .tree-item
+    display: block
+    .tree-item-title
+        display: flex
+        flex-direction: row
+        padding-top: 10px
+        padding-bottom: 10px
+        
+        a
+            cursor: default
+
+        &:focus,
+        &:hover
+            background: #f3f3f3
+            > .tree-item-name > a
+                display: inline-block
+
+        .folder
+            margin-right: 16px
+        > .tree-item-action
+            margin-left: 16px
+            vertical-align: middle
+            *
+                vertical-align: middle
+        > .tree-item-name
+            font-size: 1.2em
+            line-height: 2em
+            flex: 1
+            flex-wrap: wrap
+            .mdl-textfield
+                padding: 0
+            > a
+                display: none
+            a
+                margin: 0 3px
+            span 
+                min-width: 100px
+                margin-right: 20px
+    .sub.tree
+        margin-left: 20px
