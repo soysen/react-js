@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { ReactTransitionGroup, ReactCSSTransitionGroup } from 'react-tools';
 import { Textfield, Cell, Button, 
         Icon, IconButton, IconToggle, 
@@ -17,16 +18,20 @@ var Todo = React.createClass({
         let item = this.state.item;
         item.done = !item.done;
         this.setState({ item: item });
-        this.props.toggleTodoItem(item, this.props.index);
+        this.props.updateTodoItem(item, this.props.index);
     },
     remove() {
         this.props.removeItem(this.props.index);
     },
+    shouldComponentUpdate: function(nextProps){
+        return nextProps.item.todo !== event.target.innerHTML;
+    },
     handleChange(e) {
+        let html = e.target.innerHTML;
         let item = this.state.item;
-        item.todo = e.target.value;
+        item.todo = html;
         this.setState({ item: item });
-        this.props.toggleTodoItem(item, this.props.index);
+        this.props.updateTodoItem(this.state.item, this.props.index);
     },
     render() {
         let Check = {
@@ -47,10 +52,10 @@ var Todo = React.createClass({
             <ListItem twoLine>  
                 <ListItemContent>
                     <Icon name={Check.name} className={Check.className} onClick={this.toggleCheck} />
-                    <Textfield className={Check.textClass} 
-                    label="輸入待辦事項"
-                    onChange={this.handleChange}
-                    value={this.state.item.todo} />
+                    <div onInput={this.handleChange} className={Check.textClass} 
+                    onBlur={this.handleChange} 
+                    contentEditable 
+                    dangerouslySetInnerHTML={{__html: this.state.item.todo}}></div>
                 </ListItemContent>
                 <ListItemAction>
                     <a onClick={this.remove} className="mdl-color-text--grey-400"><Icon name="clear" /></a>

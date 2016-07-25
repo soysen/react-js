@@ -42873,6 +42873,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _reactTools = require('react-tools');
 
 var _reactMdl = require('react-mdl');
@@ -42891,16 +42895,21 @@ var Todo = _react2.default.createClass({
         var item = this.state.item;
         item.done = !item.done;
         this.setState({ item: item });
-        this.props.toggleTodoItem(item, this.props.index);
+        this.props.updateTodoItem(item, this.props.index);
     },
     remove: function remove() {
         this.props.removeItem(this.props.index);
     },
+
+    shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
+        return nextProps.item.todo !== event.target.innerHTML;
+    },
     handleChange: function handleChange(e) {
+        var html = e.target.innerHTML;
         var item = this.state.item;
-        item.todo = e.target.value;
+        item.todo = html;
         this.setState({ item: item });
-        this.props.toggleTodoItem(item, this.props.index);
+        this.props.updateTodoItem(this.state.item, this.props.index);
     },
     render: function render() {
         var Check = {
@@ -42924,10 +42933,10 @@ var Todo = _react2.default.createClass({
                 _reactMdl.ListItemContent,
                 null,
                 _react2.default.createElement(_reactMdl.Icon, { name: Check.name, className: Check.className, onClick: this.toggleCheck }),
-                _react2.default.createElement(_reactMdl.Textfield, { className: Check.textClass,
-                    label: '輸入待辦事項',
-                    onChange: this.handleChange,
-                    value: this.state.item.todo })
+                _react2.default.createElement('div', { onInput: this.handleChange, className: Check.textClass,
+                    onBlur: this.handleChange,
+                    contentEditable: true,
+                    dangerouslySetInnerHTML: { __html: this.state.item.todo } })
             ),
             _react2.default.createElement(
                 _reactMdl.ListItemAction,
@@ -42944,7 +42953,7 @@ var Todo = _react2.default.createClass({
 
 exports.default = Todo;
 
-},{"react":275,"react-mdl":121,"react-tools":127}],277:[function(require,module,exports){
+},{"react":275,"react-dom":66,"react-mdl":121,"react-tools":127}],277:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42995,7 +43004,7 @@ var TodoContainer = _react2.default.createClass({
     updateTitle: function updateTitle(e) {
         this.setState({ title: e.target.value });
     },
-    toggleTodoItem: function toggleTodoItem(data, idx) {
+    updateTodoItem: function updateTodoItem(data, idx) {
         var todo = this.state.list;
         todo.map(function (item, index) {
             if (index == idx) item = data;
@@ -43050,7 +43059,7 @@ var TodoContainer = _react2.default.createClass({
                     key: item.created_at,
                     index: idx, edit_mode: this.state.edit_mode,
                     removeItem: this.removeItem,
-                    toggleTodoItem: this.toggleTodoItem });
+                    updateTodoItem: this.updateTodoItem });
             }.bind(this));
 
             Container = _react2.default.createElement(
@@ -43157,6 +43166,13 @@ var TodoEditor = _react2.default.createClass({
         list.splice(index, 1);
         this.setState({ list: list });
     },
+    updateTodoItem: function updateTodoItem(data, idx) {
+        var todo = this.state.list;
+        todo.map(function (item, index) {
+            if (index == idx) item = data;
+        });
+        this.setState({ list: todo });
+    },
     addTodo: function addTodo() {
         var data = {
             title: this.state.title,
@@ -43191,7 +43207,7 @@ var TodoEditor = _react2.default.createClass({
         if (this.state.type == 1) {
             var Item = this.state.list.map(function (item, index) {
                 var idx = index;
-                return _react2.default.createElement(_Todo2.default, { item: item, index: idx, key: item.created_at, edit_mode: true, removeItem: this.removeItem, changeItem: this.changeItem });
+                return _react2.default.createElement(_Todo2.default, { item: item, index: idx, key: item.created_at, edit_mode: true, removeItem: this.removeItem, changeItem: this.changeItem, updateTodoItem: this.updateTodoItem });
             }.bind(this));
 
             Content = _react2.default.createElement(

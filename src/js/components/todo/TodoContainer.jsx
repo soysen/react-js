@@ -31,7 +31,7 @@ var TodoContainer = React.createClass({
     updateTitle(e) {
        this.setState({ title: e.target.value }); 
     },
-    toggleTodoItem(data, idx) {
+    updateTodoItem(data, idx) {
         let todo = this.state.list;
         todo.map(function(item, index){
             if(index==idx) item = data;
@@ -85,7 +85,7 @@ var TodoContainer = React.createClass({
                     key={item.created_at} 
                     index={idx} edit_mode={this.state.edit_mode} 
                     removeItem={this.removeItem} 
-                    toggleTodoItem={this.toggleTodoItem} />
+                    updateTodoItem={this.updateTodoItem} />
                 );  
             }.bind(this));
             

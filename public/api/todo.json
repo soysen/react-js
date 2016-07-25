@@ -6,19 +6,19 @@
         "type": 0,
         "created_at": 1469382485791
     }, {
-        "title": "待辦清單",
+        "title": "重點整理",
         "content": "",
         "list": [
             {
-                "todo": "Wake up at 7:00 a.m.",
+                "todo": "JSON 資料一定要帶 ID 或能當作 ID 的參數，否則增刪會出錯",
                 "done": true,
                 "created_at": 1469392485794
             }, {
-                "todo": "Draw a picture",
+                "todo": "list.map(function(item. index){ ... }.bind(this))",
                 "done": false,
                 "created_at": 1469392485795
             }, {
-                "todo": "More Coding",
+                "todo": "規劃好 component 跟 methods 可以事半功倍",
                 "done": false,
                 "created_at": 1469392485796
             }
@@ -27,7 +27,7 @@
         "created_at": 1469392485791
     }, {
         "title": "另一個資源",
-        "content": "http://www.material-ui.com",
+        "content": "**Material-ui** 看起來更專業(難懂)，介面跟操作也多，可參考使用 http://www.material-ui.com",
         "list": [],
         "type": 0,
         "created_at": 1469382685791

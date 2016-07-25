@@ -47,6 +47,13 @@ var TodoEditor = React.createClass({
         list.splice(index, 1);
         this.setState({ list: list });
     },
+    updateTodoItem(data, idx) {
+        let todo = this.state.list;
+        todo.map(function(item, index){
+            if(index==idx) item = data;
+        });
+        this.setState({ list: todo }); 
+    },
     addTodo() {
         let data = {
             title: this.state.title,
@@ -79,7 +86,7 @@ var TodoEditor = React.createClass({
         if(this.state.type==1) {
             let Item = this.state.list.map(function(item, index){
                 let idx = index
-                return (<Todo item={item} index={idx} key={item.created_at} edit_mode={true} removeItem={this.removeItem} changeItem={this.changeItem} />);
+                return (<Todo item={item} index={idx} key={item.created_at} edit_mode={true} removeItem={this.removeItem} changeItem={this.changeItem} updateTodoItem={this.updateTodoItem} />);
             }.bind(this));
 
             Content =   (<List>

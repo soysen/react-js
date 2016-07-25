@@ -11164,6 +11164,12 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h5 small {
   vertical-align: top;
   margin: 10px 0;
   display: inline-block; }
+  .mdl-card.todo div[contenteditable="true"] {
+    display: block;
+    margin-left: 36px; }
+    .mdl-card.todo div[contenteditable="true"].done {
+      color: #666;
+      text-decoration: line-through; }
   .mdl-card.todo *[class*="mdl-card"] {
     padding: 0;
     width: 100%; }
@@ -11188,12 +11194,10 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h5 small {
     display: block;
     padding: 0; }
     .mdl-card.todo .mdl-textfield .mdl-textfield__label {
+      top: 4px;
       height: 100%; }
       .mdl-card.todo .mdl-textfield .mdl-textfield__label:after {
         bottom: 0; }
-    .mdl-card.todo .mdl-textfield.done {
-      color: #666;
-      text-decoration: line-through; }
     .mdl-card.todo .mdl-textfield.is-disabled textarea,
     .mdl-card.todo .mdl-textfield.is-disabled input {
       border: 0;
@@ -11221,7 +11225,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h5 small {
       vertical-align: middle; }
     .mdl-card.todo ul.mdl-list li.mdl-list__item {
       min-height: 0;
-      padding: 0 8px;
+      padding: 8px;
       font-family: RobotoCondensed; }
       .mdl-card.todo ul.mdl-list li.mdl-list__item .mdl-icon {
         margin-top: 4px; }

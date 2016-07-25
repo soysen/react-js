@@ -33,6 +33,13 @@
     margin: 10px 0
     display: inline-block
     
+    div[contenteditable="true"] 
+        display: block
+        margin-left: 36px
+        &.done
+            color: #666
+            text-decoration: line-through
+
     *[class*="mdl-card"]
         padding: 0
         width: 100%
@@ -59,13 +66,11 @@
         padding: 0
 
         .mdl-textfield__label
+            top: 4px
             height: 100%
             &:after
                 bottom: 0
         
-        &.done
-            color: #666
-            text-decoration: line-through
         &.is-disabled textarea,
         &.is-disabled input
             border: 0
@@ -94,7 +99,7 @@
             vertical-align: middle
         li.mdl-list__item
             min-height: 0
-            padding: 0 8px
+            padding: 8px
             // font-weight: 300
             font-family: RobotoCondensed
             .mdl-icon
