@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var react = require('gulp-react');
-// var browserify = require('laravel-elixir-browserify-official');
 var elixir = require('laravel-elixir');
 var Task = Elixir.Task;
 
@@ -16,7 +15,6 @@ elixir.extend('renderview', function() {
 
 elixir(function(mix){
     // browserify.init();
-
     mix
     .sass('./src/sass/app.sass', './public/css/app.css')
     .scripts([
@@ -27,10 +25,11 @@ elixir(function(mix){
         './node_modules/jquery/dist/jquery.js',
         './node_modules/material-design-lite/material.js'
     ], './public/js/lib.js')
-    .browserify('./src/js/app.js', './public/js/app.js')
+    .browserify('./src/js/app.jsx', './public/js/app.js')
+    .browserify('./src/js/todo.jsx', './public/js/todo.js')
     .renderview()
     .browserSync({
-        files: ['./src/sass/**/*','./src/js/**/*','./public/**/*'],
+        files: ['./public/**/*'],
         proxy: 'react-js.dev'
     });
 

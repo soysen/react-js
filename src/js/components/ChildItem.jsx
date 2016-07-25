@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, ListItem, ListItemContent, ListItemAction, Icon, IconToggle } from 'react-mdl';
-import Child from '../components/ChildItem';
-import TitleEditor from '../components/TitleEditor';
+import Child from '../components/ChildItem.jsx';
+import TitleEditor from '../components/TitleEditor.jsx';
 
 var ChildItem = React.createClass({
   getInitialState() {
@@ -50,6 +50,7 @@ var ChildItem = React.createClass({
       }.bind(this)
     ); 
     let Title = <span>{this.state.data.name}</span>;
+    let AddIcon = <a onClick={this.addChild}><Icon name="add" /></a>;
     let EditIcon = <a onClick={this.toggleEditor} className="mdl-color-text--grey-500"><Icon name="mode_edit" /></a>;
     let RemoveIcon = <a onClick={this.remove} className="mdl-color-text--grey-500"><Icon name="delete" /></a>;
     let Folder = <Icon name="folder_open" />;
@@ -58,6 +59,7 @@ var ChildItem = React.createClass({
       Title = <TitleEditor data={this.state.data} index={this.props.index} cancelEditor={this.toggleEditor} saveName={this.saveName} />;
       EditIcon = "";
       RemoveIcon = "";
+      AddIcon = "";
     }
 
     if(this.state.is_open==false) {
@@ -71,11 +73,9 @@ var ChildItem = React.createClass({
           <a className="folder" onClick={this.toggleSubTree}>{Folder}</a>
           <div className="tree-item-name">
             {Title}
+            {AddIcon}
             {EditIcon}
             {RemoveIcon}
-          </div>
-          <div className="tree-item-action">
-            <a onClick={this.addChild}><Icon name="add" /></a>
           </div>
         </div>
         <div className="sub tree">

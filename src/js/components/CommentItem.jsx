@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, ListItem, ListItemContent, ListItemAction, Icon } from 'react-mdl';
-import Comment from '../components/Comment'; 
+import Comment from '../components/Comment.jsx'; 
 
 var CommentList = React.createClass({
     delete() {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactJS 練習</title>
+    <meta name="keywords" content="ReactJS, Apeak">
+    <meta name="description" content="ReactJS practice.">
+    <meta name="author" content="Nelson Chung.">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout-icon mdl-layout--fixed-header mdl-layout--fixed-drawer">
+        <header class="mdl-layout__header mdl-color--blue-grey-800">
+            <div class="mdl-layout__header-row">
+                <h3 class="mdl-layout-title">
+                    <i class="medium material-icons left">note</i>備忘錄
+                </h3>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+            <span class="mdl-layout-title">ReactJS 日常練習</span>
+            <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
+                <a href="index.html" class="mdl-navigation__link">
+                    <i class="material-icons left">mood</i>基本練習
+                </a>
+                <a href="todo.html" class="mdl-navigation__link active">
+                    <i class="material-icons left">note</i>備忘錄
+                </a>
+                <a href="" class="mdl-navigation__link">
+                    <i class="material-icons left">domain</i>Router
+                </a>
+                <div class="mdl-layout-spacer"></div>
+                <div class="information">
+                    <a href="https://github.com/soysen/react-js" target="_blank">
+                        <i class="mini material-icons left">settings</i>My github
+                    </a>
+                    <br>
+                    <span class="text-sm">Powered by Nelson</span>
+                </div>
+            </nav>
+        </div>
+        <main id="todo" class="mdl-layout__content mdl-color--grey-300">
+        </main>
+    </div>
+    <script src="js/lib.js"></script>
+    <script src="js/todo.js"></script>
+</body>
+</html>

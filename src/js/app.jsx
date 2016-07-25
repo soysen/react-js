@@ -37,8 +37,8 @@ ReactDom.render(
 
 /* -----------   Section 2     ------------ */
 // Import Child Components
-import CommentItem from './components/CommentItem';
-import CommentForm from './components/CommentForm';
+import CommentItem from './components/CommentItem.jsx';
+import CommentForm from './components/CommentForm.jsx';
 
 // Create component
 var CommentBox = React.createClass({
@@ -92,7 +92,7 @@ ReactDom.render(
 
 /* -----------   Section 3     ------------ */
 
-import ChildItem from './components/ChildItem';
+import ChildItem from './components/ChildItem.jsx';
 
 var Tree = React.createClass({
   getInitialState() {

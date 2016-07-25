@@ -7,3 +7,161 @@
     background-size: cover
     .mdl-card__title-text
         text-shadow: 0px 0px 5px rgba(0,0,0,.8)
+
+.mdl-cell.todo-list
+    column-count: 3
+    column-gap: 20px
+    vertical-align: top
+
+@media screen and (max-width: 768px)
+    .mdl-cell.todo-list
+        column-count: 2
+
+@media screen and (max-width: 600px)
+    .mdl-cell.todo-list
+        column-count: 1
+        column-gap: 0
+
+.mdl-card.todo
+    overflow: visible
+    display: flex
+    flex-direction: column
+    width: 100%
+    min-height: 0
+    box-sizing: border-box
+    vertical-align: top
+    margin: 10px 0
+    display: inline-block
+    
+    *[class*="mdl-card"]
+        padding: 0
+        width: 100%
+    .mdl-card__title,
+    .mdl-card__title input:disabled,
+        color: #000 !important 
+        font-weight: 500
+    .mdl-card__supporting-text .mdl-cell p 
+        color: #333
+        font-family: Roboto
+        font-size: 2em
+        font-weight: 100
+        line-height: 1.3em
+    .mdl-card__supporting-text .mdl-cell,
+    .mdl-card__actions .mdl-cell
+        margin-top: 0
+        margin-bottom: 0
+    > *:last-child .mdl-cell
+        margin-bottom: 8px
+    
+    .mdl-textfield
+        width: auto
+        display: block
+        padding: 0
+
+        .mdl-textfield__label
+            height: 100%
+            &:after
+                bottom: 0
+        
+        &.done
+            color: #666
+            text-decoration: line-through
+        &.is-disabled textarea,
+        &.is-disabled input
+            border: 0
+            color: #333 
+        textarea
+            font-family: Roboto
+            font-size: 1.75em
+            font-weight: 100
+            line-height: 1.3em
+    .mdl-button--icon 
+        position: relative
+        .material-icons
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            height: 24px
+            margin: auto
+            -webkit-transform: none
+            transform: none
+    ul.mdl-list
+        margin: 0
+        padding: 0
+        // border-top: 1px solid rgba(0,0,0,.3)
+        * 
+            vertical-align: middle
+        li.mdl-list__item
+            min-height: 0
+            padding: 0 8px
+            // font-weight: 300
+            font-family: RobotoCondensed
+            .mdl-icon
+                margin-top: 4px
+            input
+                color: #232323
+                border: 0
+                line-height: 1.7em
+            .mdl-textfield__label
+                top: 4px
+                &:after
+                    display: none
+
+            &:not(:last-child)
+                border-bottom: 1px solid rgba(0,0,0,.3)
+
+            &:hover,
+            &:focus,
+            &:hover input:disabled,
+            &:focus input:disabled
+                color: #000
+                background: #f3f3f3
+
+            &.mdl-list__item--two-line 
+                height: auto
+                .mdl-list__item-primary-content
+                    height: auto
+
+            .mdl-list__item-secondary-content .mdl-list__item-secondary-action
+                display: table
+                height: 100%
+                a 
+                    display: table-cell
+    
+            .mdl-textfield__input:disabled
+                border-bottom: 0
+            .mdl-textfield
+                margin-left: 36px
+            .mdl-icon
+                float: left
+                margin-right: 10px
+                border-radius: 50%
+                .mdl-icon-toggle__label 
+                    color: #CCC
+                &.is-checked 
+                    background: teal
+                    .mdl-icon-toggle__label
+                        color: #fff
+
+    &.editor
+        display: block
+        width: 100%
+        max-width: 600px
+        margin: auto
+        *
+            box-sizing: border-box
+        .mdl-radio
+            margin-right: 15px
+        .mdl-list__item-primary-content span
+            width: 100%
+            display: block
+        .mdl-textfield
+            padding-top: 0
+            padding-bottom: 0
+            label
+                top: 0
+                height: 100%
+                line-height: 1.5em
+            label:after
+                bottom: 0
