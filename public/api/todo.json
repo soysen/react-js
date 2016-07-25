@@ -21,6 +21,10 @@
                 "todo": "規劃好 component 跟 methods 可以事半功倍",
                 "done": false,
                 "created_at": 1469392485796
+            }, {
+                "todo": "使用 contentEditable 處理清單項目",
+                "done": false,
+                "created_at": 1469392485796
             }
         ],
         "type": 1,
