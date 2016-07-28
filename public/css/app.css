@@ -11072,6 +11072,9 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   .material-icons.large {
     font-size: 1.4em; }
 
+.mdl-layout__content {
+  padding-bottom: 5em; }
+
 .mdl-button--icon {
   overflow: visible; }
 

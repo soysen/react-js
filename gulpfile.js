@@ -14,7 +14,7 @@ elixir.extend('renderview', function() {
 });
 
 elixir(function(mix){
-    // browserify.init();
+
     mix
     .sass('./src/sass/app.sass', './public/css/app.css')
     .scripts([
@@ -27,9 +27,10 @@ elixir(function(mix){
     ], './public/js/lib.js')
     .browserify('./src/js/app.jsx', './public/js/app.js')
     .browserify('./src/js/todo.jsx', './public/js/todo.js')
+    .browserify('./src/js/pages.jsx', './public/pages/js/pages.js')
     .renderview()
     .browserSync({
-        files: ['./public/**/*'],
+        files: ['./public/**/*', './src/views/**/*.html'],
         proxy: 'react-js.dev'
     });
 
